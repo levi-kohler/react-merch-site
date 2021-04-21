@@ -1,5 +1,5 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Merch from './Components/Merch/Merch';
+import Cart from './Components/Cart/Cart';
 import styled from 'styled-components';
 
 const PageSetup = styled.div`
@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/">
           <Redirect to="/merch" />
         </Route>
-        <Route exact path="/merch" component={Merch} />
+        <Route exact path="/merch" component={Cart}/>
       </Switch>
     </PageSetup>
   );

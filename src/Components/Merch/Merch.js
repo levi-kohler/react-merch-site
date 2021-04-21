@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Product from './Components/Product';
 import styled from 'styled-components';
+import button from '../defaults/button';
 
 const Grid = styled.div`
   padding: 5px 0;
   display: grid;
+  width: 80%;
+
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(500px, auto);
   grid-gap: 1em;
@@ -25,6 +28,38 @@ const Title = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `
 
+const FlexLayout = styled.div`
+  display: flex;
+
+`
+
+const Sidebar = styled.div`
+  display: flex;
+  flex: 1;
+  margin: 5px;
+  flex-direction: column;
+  font-size: 36px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: whitesmoke;
+`
+
+const SubmitButton = styled(button)`
+  all: unset;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid white;
+  padding: 5px 15px;
+  margin: 10px 0;
+  background-color: transparent;
+  &:hover {
+    background-color: white;
+    color: black;
+    transition: .2s;
+  }
+`
+
 class Merch extends Component
 {
   constructor(props)
@@ -38,13 +73,14 @@ class Merch extends Component
       tacos: 0,
       wood: 0,
     }
+    this.sendValues = props.sendValues;
   }
 
   handleClickPlus = (e) => {
     e.preventDefault()
     this.setState(prev => ({
       ...prev,
-      [e.target.name] : prev[e.target.name] + 1
+      [e.target.name]: prev[e.target.name] + 1
     }));
   }
 
@@ -52,7 +88,7 @@ class Merch extends Component
     e.preventDefault()
     this.setState(prev => ({
       ...prev,
-      [e.target.name] : prev[e.target.name] - 1
+      [e.target.name]: prev[e.target.name] ? prev[e.target.name] - 1 : 0
     }));
   }
 
@@ -71,15 +107,26 @@ class Merch extends Component
     });
   }
 
+  onSubmit = (e) => {
+    e.preventDefault()
+    this.sendValues(this.state)
+  }
+
   render()
   {
     return (
       <>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <Title>Beethovens Goodies</Title>
-          <Grid>
-            {this.generateDisplay()}
-          </Grid>
+          <FlexLayout>
+            <Grid>
+              {this.generateDisplay()}
+            </Grid>
+            <Sidebar>
+              <div>SEND IT</div>
+              <SubmitButton text={'Submit'} />
+            </Sidebar>
+          </FlexLayout>
         </form>
       </>
     )

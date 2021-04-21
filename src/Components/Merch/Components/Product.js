@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledButtonPlus = styled(button)`
   align-self: baseline;
+  margin-bottom: 5px;
   grid-column: 4/4;
   grid-row: 4/4;
   background-color: black;
@@ -15,9 +16,9 @@ const StyledButtonPlus = styled(button)`
 `;
 
 const StyledButtonMinus = styled(button)`
-  align-self: baseline;
+  align-self: center;
   grid-column: 4/4;
-  grid-row: 5/5;
+  grid-row: 4/4;
   background-color: black;
   border: 1px solid black;
   box-shadow: inset 0 0 2px black, 0 1px 2px #0000000f;
@@ -82,8 +83,8 @@ const Product = ({onClickPlus, onClickMinus, name, stock, index}) => {
         {outputIcons[index]}
       </MockImage>
       <StockDisplay>{stock}</StockDisplay>
-      <StyledButtonPlus onClick={onClickPlus} name={name} text={inStock}/>
-      <StyledButtonMinus onClick={onClickMinus} name={name} text={removeStock}/>
+      <StyledButtonPlus onClick={onClickPlus} name={name} text={inStock} />
+      <StyledButtonMinus onClick={onClickMinus} name={name} text={removeStock} />
     </ProductHousing>
   )
 }
