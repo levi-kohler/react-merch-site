@@ -1,3 +1,15 @@
+# Beethovens Merch Site
+
+#### Co-Author: David Couch, Levi Kohler
+
+## `Description`
+A React app with full crud functionality, users can add delete update or destroy items held in state.
+
+### `Technology Used:`
+- React
+- Styled Components
+- React Router
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +80,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+***
+### CONTACT: <a href="dcouch440@gmail.com">David Couch</a>  <a href="mailto:kohler.la01@gmail.com">Levi Kohler</a> 
