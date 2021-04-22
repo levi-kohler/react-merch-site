@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import Merch from '../Merch/Merch'
-
+import FullCart from './FullCart';
 
 const Cart = () => {
   const [cart, setCart] = useState({})
+  const [cartFull, setCartFull]= useState(false)
+
   const sendValues = (data) => {
     setCart(data)
+    setCartFull(true);
   }
-  console.log(cart)
+
   return (
     <>
-      <Merch sendValues={sendValues}/>
+      {
+      cartFull?
+        <FullCart cartItems={cart}/>:
+        <Merch sendValues={sendValues}/>
+      }
     </>
   )
 }

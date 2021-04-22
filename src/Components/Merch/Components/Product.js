@@ -36,7 +36,7 @@ const MockImage = styled.div`
   grid-column: 1/4;
   grid-row: 1/5;
   margin: 20px;
-  font-size: 300px;
+  font-size: 15vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@ const Title = styled.div`
   padding-top: 25px;
   font-size: 26px;
   color: white;
-`
+`;
 
 const Product = ({onClickPlus, onClickMinus, name, stock, index}) => {
 
@@ -73,9 +73,10 @@ const Product = ({onClickPlus, onClickMinus, name, stock, index}) => {
   const outputIcons = [
     '➊','➋','➌','➍','➎',
     '➏','➐','➑','➒','➓',
-    '⓫', '⓬','⓭','⓮','⓯',
-    '⓰', '⓱','⓲','⓳','⓴'
-  ]
+    '⓫', '⓬','⓭', '⓮','⓯',
+    '⓰', '⓱','⓲', '⓳', '⓴'
+  ];
+
   return (
     <ProductHousing>
       <MockImage>

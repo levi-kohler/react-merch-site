@@ -52,7 +52,9 @@ const SubmitButton = styled(button)`
   border: 2px solid white;
   padding: 5px 15px;
   margin: 10px 0;
+  color: whitesmoke;
   background-color: transparent;
+  text-decoration: none;
   &:hover {
     background-color: white;
     color: black;
@@ -64,15 +66,17 @@ class Merch extends Component
 {
   constructor(props)
   {
-    super(props)
-    this.state = {
+    super(props);
+    this.initialState = {
       hats: 0,
       shirts: 0,
       sweatshirts: 0,
       keys: 0,
       tacos: 0,
       wood: 0,
-    }
+    };
+
+    this.state = this.initialState;
     this.sendValues = props.sendValues;
   }
 
@@ -108,8 +112,9 @@ class Merch extends Component
   }
 
   onSubmit = (e) => {
-    e.preventDefault()
-    this.sendValues(this.state)
+    e.preventDefault();
+    this.sendValues(this.state);
+    this.setState(this.initialState);
   }
 
   render()
@@ -124,7 +129,7 @@ class Merch extends Component
             </Grid>
             <Sidebar>
               <div>SEND IT</div>
-              <SubmitButton text={'Submit'} />
+                <SubmitButton text={'Submit'} />
             </Sidebar>
           </FlexLayout>
         </form>
